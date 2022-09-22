@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Navigate, Link } from "react-router-dom";
 import AuthContext from "../Auth/AuthContext";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import Paginator from "./Paginator";
 
 const Profile = () => {
-
-    
-  const initialURL = "https://rickandmortyapi.com/api/character";
   const [characters, setCharacters] = useState([]);
+  const [info, setInfo] = useState({});
   const [favoriteList, setFavoriteList] = React.useState([]);
+  const requestOptions = {
+    method: "GET",
+  };
 
-  
+  const initialURL = `https://rickandmortyapi.com/api/character/?page=1`;
 
   const onFavorite = (character) => {
     setFavoriteList([...favoriteList, character]);
@@ -31,18 +33,29 @@ const Profile = () => {
     }
     return false;
   };
+
+  const onPrevious = () => {
+    fetchCharacters(info.prev);
+  };
+  const onNext = () => {
+    fetchCharacters(info.next);
+  };
+
   useEffect(() => {
-    fetchCharacters();
+    fetchCharacters(initialURL);
   }, []);
 
-  function fetchCharacters() {
-    fetch(initialURL)
-      .then((resp) => resp.json())
+  const fetchCharacters = async (url) => {
+    await fetch(url, requestOptions)
+      .then((res) => res.json())
       .then((data) => {
         setCharacters(data.results);
-        console.log(data);
+        setInfo(data.info);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-  }
+  };
 
   return (
     <AuthContext.Consumer>
@@ -55,6 +68,7 @@ const Profile = () => {
           <>
             <div className="App">
               <h1>Rick and morty characters</h1>
+
               {characters.map((character, index) => {
                 return (
                   <div className="character" key={index}>
@@ -75,7 +89,12 @@ const Profile = () => {
                   </div>
                 );
               })}
-              
+              <Paginator
+                prev={info.prev}
+                next={info.next}
+                onPrev={onPrevious}
+                onNext={onNext}
+              />
             </div>
           </>
         )

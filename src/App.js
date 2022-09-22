@@ -17,10 +17,11 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/profile" element={<Profile/>} />
+          
             <Route path="/login" element={<Login/>} />
             <Route path="/logout" element={<Profile/>} />
             <Route path="/detail/:id" element={<Detail/>} />
+            <Route path="/profile" element={<Profile/>} />
             <Route path="/" exact element={<Home/>} />
             <Route render={() => <h1>Error 404</h1>} />
           </Routes>

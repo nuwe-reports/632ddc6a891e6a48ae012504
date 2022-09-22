@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-input {
+.login-input {
   padding: 10px 10px;
   margin-top: 10px;
   border-radius: 10px;
