@@ -6,12 +6,13 @@ export default function CardDetails() {
   let api = `https://rickandmortyapi.com/api/character/${id}`;
 
   let [info, setInfo] = useState([]);
-  let { name, image, species, origin, location, gender } = info;
+  let { name, image, species, origin, location, gender, status, episode } = info;
 
   useEffect(() => {
     (async function () {
       let data = await fetch(api).then((res) => res.json());
       setInfo(data);
+      console.log(data)
     })();
   }, [api]);
 
@@ -37,6 +38,10 @@ export default function CardDetails() {
         <div className="">
           <span className="fw-bold">Species : </span>
           {species}
+        </div>
+        <div className="">
+          <span className="fw-bold">Status : </span>
+          {status}
         </div>
       </div>
     </div>

@@ -12,7 +12,9 @@ const Login = () => {
           change.state.isAuthenticated ? (
             <Navigate to="/profile" />
           ) : (
+            
             <div className="box">
+              
               {change.state.error}
               <input
                 type="text"
