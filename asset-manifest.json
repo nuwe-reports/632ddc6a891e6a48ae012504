@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rick-morty-auth/static/css/main.526771fd.css",
+    "main.js": "/rick-morty-auth/static/js/main.f776aef3.js",
+    "static/js/787.e75d53e9.chunk.js": "/rick-morty-auth/static/js/787.e75d53e9.chunk.js",
+    "static/media/logo.png": "/rick-morty-auth/static/media/logo.3e9454cc5e0367ba18e4.png",
+    "index.html": "/rick-morty-auth/index.html",
+    "main.526771fd.css.map": "/rick-morty-auth/static/css/main.526771fd.css.map",
+    "main.f776aef3.js.map": "/rick-morty-auth/static/js/main.f776aef3.js.map",
+    "787.e75d53e9.chunk.js.map": "/rick-morty-auth/static/js/787.e75d53e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.526771fd.css",
+    "static/js/main.f776aef3.js"
+  ]
+}
