@@ -13,14 +13,14 @@ const Menu = () => {
               <>
               <li style={{ fontStyle: "italic"}}>Bienvenido/a: {context.state.username}</li>
                 <li>
-                  <NavLink to="/profile" style={{color: "#0D004D", textDecoration: "none"}}>Personajes</NavLink>
+                  <NavLink to="/profile" style={{color: "#fff", textDecoration: "none"}}>Personajes</NavLink>
                 </li>
                 
                 <li onClick={context.logout}>Logout</li>
               </>
             ) : (
               <li>
-                <NavLink to="/login" style={{color: "#0D004D", textDecoration: "none"}}>Login</NavLink>
+                <NavLink to="/login" style={{color: "#fff", textDecoration: "none"}}>Login</NavLink>
               </li>
             )
           }

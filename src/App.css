@@ -46,13 +46,12 @@ li {
   position: relative;
 }
 .navbar {
-  background-color: #fff;
-  color: #0d004d;
+  background-color: #0d004d;
+  color: #fff;
   display: flex;
   justify-content: space-around;
   align-content: center;
-  border-bottom: 5px solid #0d004d;
-  border-top: 5px solid #0d004d;
+  box-shadow: 10px 10px 51px -12px rgba(13,0,77,1);
 }
 
 .container {

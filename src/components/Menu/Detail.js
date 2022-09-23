@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
+import AuthContext from "../Auth/AuthContext";
 
 export default function CardDetails() {
   let { id } = useParams();
@@ -17,6 +18,14 @@ export default function CardDetails() {
   }, [api]);
 
   return (
+    <AuthContext.Consumer>
+      {(context) =>
+        !context.state.isAuthenticated ? (
+          <>
+            <Navigate to="/login" />
+          </>
+        ) : (
+          <>
     <div className="container">
       <div className="card-details">
         
@@ -24,23 +33,23 @@ export default function CardDetails() {
         <div className="content">
           <h1 className="text-center">{name}</h1>
           <div className="">
-            <span className="bold">Gender : </span>
+            <span className="bold">Gender: </span>
             {gender}
           </div>
           <div className="">
-            <span className="bold">Location : </span>
+            <span className="bold">Location: </span>
             {location?.name}
           </div>
           <div className="">
-            <span className="bold">Origin : </span>
+            <span className="bold">Origin: </span>
             {origin?.name}
           </div>
           <div className="">
-            <span className="bold">Species : </span>
+            <span className="bold">Species: </span>
             {species}
           </div>
           <div className="">
-            <span className="bold">Status : </span>
+            <span className="bold">Status: </span>
             {status}
           </div>
         </div>
@@ -49,5 +58,7 @@ export default function CardDetails() {
         </div>
       </div>
     </div>
+    </>)}
+    </AuthContext.Consumer>
   );
 }
