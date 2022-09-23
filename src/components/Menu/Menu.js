@@ -11,15 +11,16 @@ const Menu = () => {
           {(context) =>
             context.state.isAuthenticated ? (
               <>
+              <li style={{ fontStyle: "italic"}}>Bienvenido/a: {context.state.username}</li>
                 <li>
-                  <NavLink to="/profile">Personajes</NavLink>
+                  <NavLink to="/profile" style={{color: "#0D004D", textDecoration: "none"}}>Personajes</NavLink>
                 </li>
-                <li>Bienvenido/a: {context.state.username}</li>
+                
                 <li onClick={context.logout}>Logout</li>
               </>
             ) : (
               <li>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/login" style={{color: "#0D004D", textDecoration: "none"}}>Login</NavLink>
               </li>
             )
           }

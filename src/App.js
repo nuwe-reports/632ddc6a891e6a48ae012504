@@ -9,7 +9,6 @@ import Profile from "./components/Menu/Profile";
 import Login from "./components/Menu/Login";
 import Detail from "./components/Menu/Detail";
 import Error from "./components/Error/Error";
-import fondo from "./assets/fondo.jpg"
 import "./App.css";
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
           <Navbar />
           
           <Routes>
-          
             <Route path="/login" element={<Login/>} />
             <Route path="/logout" element={<Profile/>} />
             <Route path="/detail/:id" element={<Detail/>} />

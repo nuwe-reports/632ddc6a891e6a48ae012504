@@ -6,7 +6,7 @@ import AuthContext from "../Auth/AuthContext";
 const Login = () => {
   return (
     <div className="container">
-      <h3>Logeate para ver los personajes</h3>
+      
       <AuthContext.Consumer>
         {(change) =>
           change.state.isAuthenticated ? (
@@ -14,7 +14,7 @@ const Login = () => {
           ) : (
             
             <div className="box">
-              
+              <h3>Logeate para ver los personajes</h3>
               {change.state.error}
               <input
                 type="text"

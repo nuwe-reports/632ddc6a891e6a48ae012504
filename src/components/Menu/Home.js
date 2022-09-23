@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import AuthContext from "../Auth/AuthContext";
 
 const Home = () => {
@@ -9,7 +9,13 @@ const Home = () => {
         {(context) =>
           !context.state.isAuthenticated ? (
             <>
-              <h3>Logeate para ver los personajes de Rick y Morty</h3>
+            <div className="container">
+              <div className="card">
+              <Link to="/login"><h3>Logeate para ver los personajes de Rick y Morty</h3></Link>
+              </div>
+            
+            </div>
+              
             </>
           ) : (
             <>

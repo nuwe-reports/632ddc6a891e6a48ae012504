@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logo from "../assets/logo.png"
 
 
 
@@ -8,7 +9,10 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <h2>Rick y Morty</h2>
+        
+        <img src={Logo} style={{height: "4rem", width:"10rem"}}/>
+        
+        
         <Menu />
       </div>
     );

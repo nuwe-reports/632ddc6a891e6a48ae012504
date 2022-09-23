@@ -43,7 +43,7 @@ const Profile = () => {
 
   useEffect(() => {
     fetchCharacters(initialURL);
-  }, []);
+  },[] );
 
   const fetchCharacters = async (url) => {
     await fetch(url, requestOptions)
@@ -66,36 +66,39 @@ const Profile = () => {
           </>
         ) : (
           <>
-            <div className="App">
-              <h1>Rick and morty characters</h1>
+            <div className="Grid">
 
               {characters.map((character, index) => {
                 return (
-                  <div className="character" key={index}>
-                    <img src={character.image} alt="character img" />
-                    {character.name}
-                    <button
+                  <div className="card" key={index}>
+                    <img src={character.image} alt="character img" className="card-img"/>
+                    <p className="card-text">{character.name}  <button
                       onClick={() =>
                         ifExists(character)
                           ? onRemoveFavorite(character)
                           : onFavorite(character)
                       }
+                      className="button-fav"
                     >
-                      {ifExists(character) ? <FaHeart /> : <FaRegHeart />}
-                    </button>
+                      {ifExists(character) ? <FaHeart style={{fontSize: "1.5rem", color: "#0D004D"}}/> : <FaRegHeart style={{fontSize: "1.5rem", color: "#0D004D"}}/>}
+                    </button></p>
+                    
+                    
                     <Link to={`/detail/${character.id}`}>
-                      <button> Detalles</button>
+                      <button className="login-button">MÁS DETALLES</button>
                     </Link>
                   </div>
                 );
               })}
-              <Paginator
+              
+            </div>
+            <Paginator
                 prev={info.prev}
                 next={info.next}
                 onPrev={onPrevious}
                 onNext={onNext}
+                className = "paginator"
               />
-            </div>
           </>
         )
       }

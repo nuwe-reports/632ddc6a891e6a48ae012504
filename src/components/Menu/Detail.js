@@ -6,42 +6,46 @@ export default function CardDetails() {
   let api = `https://rickandmortyapi.com/api/character/${id}`;
 
   let [info, setInfo] = useState([]);
-  let { name, image, species, origin, location, gender, status, episode } = info;
+  let { name, image, species, origin, location, gender, status } = info;
 
   useEffect(() => {
     (async function () {
       let data = await fetch(api).then((res) => res.json());
       setInfo(data);
-      console.log(data)
+      console.log(data);
     })();
   }, [api]);
 
   return (
-    <div className="container d-flex justify-content-center ">
-      <div className="d-flex flex-column gap-3">
-        <h1 className="text-center">{name}</h1>
-        <img src={image} alt="" className="img-fluid" />
+    <div className="container">
+      <div className="card-details">
+        
+
         <div className="content">
+          <h1 className="text-center">{name}</h1>
           <div className="">
-            <span className="fw-bold">Gender : </span>
+            <span className="bold">Gender : </span>
             {gender}
           </div>
+          <div className="">
+            <span className="bold">Location : </span>
+            {location?.name}
+          </div>
+          <div className="">
+            <span className="bold">Origin : </span>
+            {origin?.name}
+          </div>
+          <div className="">
+            <span className="bold">Species : </span>
+            {species}
+          </div>
+          <div className="">
+            <span className="bold">Status : </span>
+            {status}
+          </div>
         </div>
-        <div className="">
-          <span className="fw-bold">Location : </span>
-          {location?.name}
-        </div>
-        <div className="">
-          <span className="fw-bold">Origin : </span>
-          {origin?.name}
-        </div>
-        <div className="">
-          <span className="fw-bold">Species : </span>
-          {species}
-        </div>
-        <div className="">
-          <span className="fw-bold">Status : </span>
-          {status}
+        <div className="card-intro">
+          <img src={image} alt="" className="img-bold" />
         </div>
       </div>
     </div>
