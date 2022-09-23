@@ -22,14 +22,13 @@
             <p>npm install / npm i</p>
         <li>Vizualizamos el proyecto ejecutando en un terminal integrado</li>
                 <p>npm start</p>
-        
         </ol>
         
 </ul>
 
 ## 💻 Visualizar proyecto:
 
-<i>enlace a githubpages</i>
+<i>https://eperez045.github.io/rick-morty-auth/</i>
 
 ## ✒️ Personas autoras
 
