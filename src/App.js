@@ -24,6 +24,7 @@ class App extends Component {
             <Route path="/logout" element={<Profile/>} />
             <Route path="/detail/:id" element={<Detail/>} />
             <Route path="/profile" element={<Profile/>} />
+            <Route path="/rick-morty-auth" element={<Home/>} />
             <Route path="/" exact element={<Home/>} />
             <Route path="*" element={<Error/>}/>
           </Routes>
