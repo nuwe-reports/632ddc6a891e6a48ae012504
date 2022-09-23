@@ -1,12 +1,12 @@
-# 💻 Rick y Morty
+# 💻 Rick and Morty
 
-<p>Una aplicación que utilice la API pública de Rick y Morty para nuestro nuevo cliente.</p>
+<p>Una aplicación que utilice la API pública de Rick y Morty para nuestro nuevo cliente. Para ver una lista de todos los personajes simplemente logueate, una vez logueado podrás escoger tus favoritos o ver mas detalles</p>
 
 ## ⚙️ Tecnologías utilizadas en el proyecto
 
 <ul>
         <li>React</li>
-        <li>Bootstrap</li>
+        <li>Api Rick and Morty</li>
         <li>JavaScript</li>
 </ul>
 
@@ -22,8 +22,7 @@
             <p>npm install / npm i</p>
         <li>Vizualizamos el proyecto ejecutando en un terminal integrado</li>
                 <p>npm start</p>
-        <li>Para correr los test usamos el comando:</li>
-            <p>npm run test</p>
+        
         </ol>
         
 </ul>
