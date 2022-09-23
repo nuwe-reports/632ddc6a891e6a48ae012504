@@ -24,7 +24,7 @@ const Login = () => {
                 className="login-input"
               />
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Enter your Password"
                 onChange={change.passwordChange}

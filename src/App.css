@@ -39,6 +39,7 @@ li {
 .card-text {
   text-align: center;
   font-weight: bold;
+  white-space: nowrap;
 }
 .button-fav {
   background: none;
